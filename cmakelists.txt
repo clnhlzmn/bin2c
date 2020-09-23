@@ -1,0 +1,4 @@
+cmake_minimum_required (VERSION 3.0)
+project(bin2c)
+add_compile_options(-Wall -Wextra -std=c99 -g)
+add_executable(bin2c bin2c.c)
