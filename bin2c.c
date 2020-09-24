@@ -7,7 +7,6 @@ int main(int argc, char** argv) {
     char *output_file_name = argv[2];
     FILE* input_file = fopen(input_file_name, "rb");
     FILE *output_file = fopen(output_file_name, "w+");
-    fprintf(output_file, "char data[] = {\n");
     unsigned long n = 0;
     while(!feof(input_file)) {
         unsigned char c;
@@ -17,7 +16,5 @@ int main(int argc, char** argv) {
         if(n % 0x10 == 0) fprintf(output_file, "\n");
     }
     fclose(input_file);
-    fprintf(output_file, "};\n");
-    fprintf(output_file, "unsigned int size = %ld;\n", n);
     fclose(output_file);
 }
